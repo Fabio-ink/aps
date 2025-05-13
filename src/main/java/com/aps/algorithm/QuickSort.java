@@ -5,8 +5,8 @@ import java.io.File;
 import java.util.Arrays;
 
 
-public class OrdenaImagens {
-    public static void quickSort(String[] args) {
+public class QuickSort {
+    public void quickSort(String[] args) {
         File pasta = new File(("/home/raulzera/Documentos/Teste"));
 
         File[] imagens = pasta.listFiles((dir, nome) ->
