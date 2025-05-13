@@ -1,9 +1,15 @@
+package com.aps.algorithm;
+
 import java.io.File;
+import java.util.ArrayList;
 
 public class MergeSortImagens {
 
-    public static void main(String[] args) {
-        File pasta = new File("/home/fluxyfp/Downloads/PastaTeste");
+    public ArrayList<Long> mergeSort() {
+        
+        ArrayList<Long> ms = new ArrayList();
+
+        File pasta = new File("/home/raulzera/Documentos/Teste/");
 
         File[] imagens = pasta.listFiles((dir, nome) ->
                 nome.toLowerCase().endsWith(".jpg") || nome.toLowerCase().endsWith(".jpeg") || nome.toLowerCase().endsWith(".png")
@@ -19,12 +25,14 @@ public class MergeSortImagens {
             System.out.println("Tempo de ordenação (MergeSort): " + duracaoMs + " ms");
 
             for (File imagem : imagens) {
-                System.out.println(imagem.getName());
+                ms.add(); 
             }
+
         } else {
-            System.out.println("A pasta está vazia ou não existe.");
+            throw new IllegalArgumentException("A pasta está vazia ou não existe.");
         }
-    }
+        return ms;
+    }   
 
     // Implementação do Merge Sort
     public static void mergeSort(File[] arquivos, int inicio, int fim) {

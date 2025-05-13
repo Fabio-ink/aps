@@ -1,10 +1,13 @@
+package com.aps.algorithm;
+
+
 import java.io.File;
 import java.util.Arrays;
-import dotenv.config;
+
 
 public class OrdenaImagens {
-    public static void main(String[] args) {
-        File pasta = new File(dotenv.get(path_file));
+    public static void quickSort(String[] args) {
+        File pasta = new File(("/home/raulzera/Documentos/Teste"));
 
         File[] imagens = pasta.listFiles((dir, nome) ->
                 nome.toLowerCase().endsWith(".jpg") || nome.toLowerCase().endsWith(".jpeg") || nome.toLowerCase().endsWith(".png")
