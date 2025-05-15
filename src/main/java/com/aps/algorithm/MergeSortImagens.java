@@ -7,13 +7,14 @@ public class MergeSortImagens {
 
     public ArrayList<Long> mergeSort() {
         
-        ArrayList<Long> ms = new ArrayList();
+        ArrayList<Long> ms = new ArrayList<Long>();
 
         File pasta = new File("/home/raulzera/Documentos/Teste/");
 
         File[] imagens = pasta.listFiles((dir, nome) ->
                 nome.toLowerCase().endsWith(".jpg") || nome.toLowerCase().endsWith(".jpeg") || nome.toLowerCase().endsWith(".png")
         );
+
 
         if (imagens != null && imagens.length > 0) {
             long inicio = System.nanoTime();
@@ -25,7 +26,7 @@ public class MergeSortImagens {
             System.out.println("Tempo de ordenação (MergeSort): " + duracaoMs + " ms");
 
             for (File imagem : imagens) {
-                ms.add(); 
+                ms.add(imagem.length()); 
             }
 
         } else {
@@ -35,13 +36,17 @@ public class MergeSortImagens {
     }   
 
     // Implementação do Merge Sort
-    public static void mergeSort(File[] arquivos, int inicio, int fim) {
+    public ArrayList<Long> mergeSort(File[] arquivos, int inicio, int fim) {
+
+        ArrayList<Long> teste = new ArrayList<Long>();
+
         if (inicio < fim) {
             int meio = (inicio + fim) / 2;
             mergeSort(arquivos, inicio, meio);
             mergeSort(arquivos, meio + 1, fim);
             merge(arquivos, inicio, meio, fim);
         }
+        return teste;
     }
 
     // Combinação de duas metades ordenadas
@@ -83,3 +88,5 @@ public class MergeSortImagens {
         }
     }
 }
+
+//Retornar a lista normal

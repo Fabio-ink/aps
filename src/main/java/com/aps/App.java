@@ -8,7 +8,7 @@ public class App
 public static void main( String[] args ){
 
     MergeSortImagens ms = new MergeSortImagens();
-    ms.mergeSort();
+    System.out.println(ms.mergeSort()); 
 
 }
        
